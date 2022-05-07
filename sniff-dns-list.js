@@ -1,6 +1,6 @@
-const shell = require('./shell')
 const fs = require('fs')
 const sniff = require('./sniff')
+var os = require("os");
 
 let duration = 40
 
@@ -18,7 +18,7 @@ const extractDnsListFromPackets = function(output) {
 }
 
 const recoverDnsList = async function(opts) {
-    const hostname = shell.runCommand("hostname").trim()
+    const hostname = os.hostname();
     
     let output = await sniff(opts)
     let dnses = extractDnsListFromPackets(output)

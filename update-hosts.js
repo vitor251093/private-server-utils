@@ -1,8 +1,9 @@
 const fs = require('fs')
+const os = require('os')
 
 let localhost = '127.0.0.1'
-let etcHostsPath = "/etc/hosts"
-let etcHostsEncoding = 'utf8'
+let etcHostsPath = os.platform === "win32" ? "C:\\Windows\\System32\\drivers\\etc" : "/etc/hosts"
+let etcHostsEncoding = os.platform === "win32" ? 'ascii' : 'utf8'
 let dnsList = fs.readFileSync('./dns_list.txt', {encoding:'utf8'}).split("\n")
 
 let hosts = fs.readFileSync(etcHostsPath, {encoding:etcHostsEncoding}).split('\n')
