@@ -2,6 +2,8 @@ const shell = require('./shell')
 const fs = require('fs')
 const sniff = require('./sniff')
 
+let duration = 40
+
 const knownFalsePositivesDns = fs.readFileSync("./dns_blacklist.txt", {encoding:"utf8"})
                 .split("\n").map(dns => dns.trim()).filter(dns => dns.length > 0)
 
@@ -26,7 +28,7 @@ const recoverDnsList = async function(opts) {
     return dnses.filter(dns => !ignorableList.includes(dns) && !dns.endsWith(".mygateway"))
 }
 
-recoverDnsList({duration:15})
+recoverDnsList({duration:duration})
     .then(dnsList => {
         let str = dnsList.join("\n")
         fs.writeFileSync("./dns_list.txt", str, {encoding:"utf8"})

@@ -1,11 +1,14 @@
 asimov.vortex.data.trafficmanager.net
+autoupdate.geo.opera.com
 edgedl.me.gvt1.com
 location.services.mozilla.com
 locprod2-elb-us-west-2.prod.mozaws.net
 mobile.events.data.microsoft.com
+onedscolprdeus03.eastus.cloudapp.azure.com
 onedscolprdeus10.eastus.cloudapp.azure.com
 onedscolprdneu03.northeurope.cloudapp.azure.com
 onedscolprdwus04.westus.cloudapp.azure.com
+onedscolprdwus08.westus.cloudapp.azure.com
 signaler-pa.clients6.google.com
 ssl.gstatic.com
 update.googleapis.com
