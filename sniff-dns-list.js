@@ -2,7 +2,8 @@ const fs = require('fs')
 const sniff = require('./sniff')
 var os = require("os");
 
-let duration = 40
+const args = process.argv
+let duration = parseInt(args[args.length - 1])
 
 const knownFalsePositivesDns = fs.readFileSync("./dns_blacklist.txt", {encoding:"utf8"})
                 .split("\n").map(dns => dns.trim()).filter(dns => dns.length > 0)
